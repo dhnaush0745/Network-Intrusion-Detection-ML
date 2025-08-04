@@ -1,0 +1,66 @@
+{
+  "doc_type": "pipeline",
+  "pipelines": [{
+    "id": "798fbc4d-4022-4d98-a62d-91eb0cdd511b",
+    "nodes": [{
+      "id": "autoai-ts",
+      "op": "wml-http-score",
+      "outputs": [{
+        "id": "autoai-ts"
+      }],
+      "parameters": {
+        "output_logs": true,
+        "del_on_close": true,
+        "optimization": {
+          "customized_pipelines": [],
+          "prediction_horizon": 1,
+          "target_columns": ["class"],
+          "lookback_window": -1,
+          "max_num_daub_ensembles": 3,
+          "output_format": "json",
+          "gap_len": 0,
+          "holdout_param": 20,
+          "future_exogenous_available": true,
+          "num_backtest": 4,
+          "use_imputation": true,
+          "pipeline_type": "all",
+          "learning_type": "timeseries",
+          "imputer_list": ["FlattenIterative", "Linear", "Cubic", "Previous"],
+          "feature_columns": ["class", "duration", "src_bytes", "dst_bytes", "land", "wrong_fragment", "urgent", "hot", "num_failed_logins", "logged_in"],
+          "imputation_threshold": 0.25
+        },
+        "storage": {
+          "exchange": "training-prod",
+          "url": "amqps://ibm_cloud_3fb09a99_3510_496a_a448_3bd76eea92a7:369GAT1bLa23N2IZ2FlHZUSlcRPSqspv@3752b327-99be-4ccc-b993-c256924fbde2.bkvfv1ld0bj2bdbncbeg.databases.appdomain.cloud:30942"
+        },
+        "n_parallel_data_connections": 4,
+        "one_vs_all_file": true,
+        "compute_pipeline_notebooks_flag": true,
+        "wml_status": {
+          "url": "https://us-south.ml.cloud.ibm.com/v4_private/trainings"
+        }
+      },
+      "runtime_ref": "autoai",
+      "type": "execution_node"
+    }],
+    "runtime_ref": "hybrid"
+  }],
+  "primary_pipeline": "798fbc4d-4022-4d98-a62d-91eb0cdd511b",
+  "runtimes": [{
+    "app_data": {
+      "wml_data": {
+        "hardware_spec": {
+          "id": "a6c4923b-b8e4-444c-9f43-8a7ec3020110",
+          "name": "L"
+        },
+        "software_spec": {
+          "name": "autoai-ts_rt24.1-py3.11"
+        }
+      }
+    },
+    "id": "autoai",
+    "name": "auto_ai.ts",
+    "version": "2.1.740"
+  }],
+  "version": "2.0"
+}
