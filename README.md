@@ -114,8 +114,4 @@ To download files like `nids_model_bundle.zip` from Watson Studio:
 * [IBM Watson Studio Documentation](https://dataplatform.cloud.ibm.com/docs/)
 * NSL-KDD / KDDCup 1999 Dataset
 * scikit-learn: [https://scikit-learn.org](https://scikit-learn.org)
-* [Pandas Documentation](https://pandas.pydata.org)
-
----
-
-Let me know if you'd like a PDF version of this or want to include screenshots.
+* [Pandas Documentation](https://pandas.pydata.org) a PDF version of this or want to include screenshots.
