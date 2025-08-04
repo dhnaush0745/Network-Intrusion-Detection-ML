@@ -1,7 +1,3 @@
-Here is a suggested `README.md` file content for your **Network Intrusion Detection System (NIDS)** model deployment and testing workflow on **IBM Watson Machine Learning**:
-
----
-
 # 🛡️ Network Intrusion Detection System (NIDS) – IBM Watson ML
 
 This project implements a machine learning-based **Network Intrusion Detection System** to identify malicious activity in network traffic data. The model is trained, deployed, and tested using IBM Watson Machine Learning.
